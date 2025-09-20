@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>home</string>
+   <string>Yumeyoの网络瑞士军刀</string>
   </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
@@ -23,8 +23,136 @@
      <height>24</height>
     </rect>
    </property>
+   <widget class="QMenu" name="tools">
+    <property name="enabled">
+     <bool>false</bool>
+     <bool>true</bool>
+    </property>
+    <property name="tearOffEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>工具（开发中）</string>
+     <string>工具（新建文件夹）</string>
+    </property>
+    <widget class="QMenu" name="Ping">
+     <property name="title">
+      <string>NowPing 延迟检测</string>
+     </property>
+     <addaction name="PingCS"/>
+     <addaction name="PingVAL"/>
+     <addaction name="PINGGNT"/>
+    </widget>
+    <addaction name="WOL"/>
+    <addaction name="track"/>
+    <addaction name="NAT"/>
+    <addaction name="Ping"/>
+   </widget>
+   <widget class="QMenu" name="helpcenter">
+    <property name="title">
+     <string>帮助中心</string>
+    </property>
+    <widget class="QMenu" name="git">
+     <property name="title">
+      <string>查看源码</string>
+     </property>
+     <addaction name="CNB"/>
+     <addaction name="Github"/>
+    </widget>
+    <widget class="QMenu" name="issue">
+     <property name="title">
+      <string>问题反馈</string>
+     </property>
+     <addaction name="issuecnb"/>
+     <addaction name="issuegithub"/>
+    </widget>
+    <addaction name="about"/>
+    <addaction name="wiki"/>
+    <addaction name="separator"/>
+    <addaction name="action"/>
+    <addaction name="git"/>
+    <addaction name="updatelog"/>
+    <addaction name="issue"/>
+   </widget>
+   <addaction name="tools"/>
+   <addaction name="helpcenter"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <action name="WOL">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>WakeNow 局域网唤醒</string>
+   </property>
+  </action>
+  <action name="track">
+   <property name="text">
+    <string>TrackNow 路由检测</string>
+   </property>
+  </action>
+  <action name="NAT">
+   <property name="text">
+    <string>WhatsNAT 网络转换层级检测</string>
+   </property>
+  </action>
+  <action name="about">
+   <property name="text">
+    <string>关于</string>
+   </property>
+  </action>
+  <action name="updatelog">
+   <property name="text">
+    <string>更新日志</string>
+   </property>
+  </action>
+  <action name="wiki">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Wiki（建设中）</string>
+   </property>
+  </action>
+  <action name="PingCS">
+   <property name="text">
+    <string>PingCS 《反恐精英》延迟检测</string>
+   </property>
+  </action>
+  <action name="PINGGNT">
+   <property name="text">
+    <string>PingGlobalNT 全球网测延迟检测</string>
+   </property>
+  </action>
+  <action name="PingVAL">
+   <property name="text">
+    <string>PingVAL《无畏契约》国服延迟检测</string>
+   </property>
+  </action>
+  <action name="CNB">
+   <property name="text">
+    <string>CNB</string>
+   </property>
+  </action>
+  <action name="Github">
+   <property name="text">
+    <string>Github</string>
+   </property>
+  </action>
+  <action name="issuecnb">
+   <property name="text">
+    <string>CNB</string>
+   </property>
+  </action>
+  <action name="issuegithub">
+   <property name="text">
+    <string>Github</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>博客</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

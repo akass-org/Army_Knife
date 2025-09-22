@@ -25,11 +25,15 @@ public:
     ~home();
 
 private slots:
+    /*Help*/
     void action_help_wiki_triggered();//wiki信号
     void action_help_cnb_triggered();//cnb信号
     void action_help_about_triggered();//关于信号
     void action_help_github_triggered();//github信号
     void action_help_updatelog_triggered();//更新日志信号
+    void action_help_issuecnb_triggered();//IssueCNB
+    void action_help_issuegithub_triggered();//IssueGithub
+    /*Tools*/
     // void action_tools_wol();//菜单栏WOL
     // void action_tools_TraceRote();//Trace Route
     // void action_tools_nat();

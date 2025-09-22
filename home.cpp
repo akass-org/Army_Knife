@@ -17,6 +17,8 @@ home::home(QWidget *parent)
     connect(ui -> Github, &QAction::triggered, this, &home::action_help_github_triggered);// 连接UI：Github
     connect(ui -> wiki, &QAction::triggered, this, &home::action_help_wiki_triggered); // 连接UI：WIKI
     connect(ui -> updatelog, &QAction::triggered, this, &home::action_help_updatelog_triggered);//连接UI：更新日志
+    connect(ui -> issuecnb, &QAction::triggered, this, &home::action_help_issuecnb_triggered);//连接UI：IssueCNB
+    connect(ui -> issuegithub, &QAction::triggered, this, &home::action_help_issuegithub_triggered);//UI：IssueGH
 }
 
 home::~home()
@@ -50,8 +52,18 @@ void home::action_help_about_triggered(){
     aboutWidget->setAttribute(Qt::WA_DeleteOnClose);
     aboutWidget->exec();
 }
-//打开更新日志
+    //打开更新日志
 void home::action_help_updatelog_triggered(){
     QUrl updateurl("https://ak.ne0w0r1d.top/?id=更新日志");
     QDesktopServices::openUrl(updateurl);
+}
+    //IssueCNB
+void home::action_help_issuecnb_triggered(){
+    QUrl issuecnb("https://cnb.cool/neoengine_dev/Yumeyo_no_Army_Knife/-/issues");
+    QDesktopServices::openUrl(issuecnb);
+}
+    //IssueGithub
+void home::action_help_issuegithub_triggered(){
+    QUrl issuegithub("https://github.com/Ne0W0r1d/Yumeyo_no_Army_Knife/issues");
+    QDesktopServices::openUrl(issuegithub);
 }

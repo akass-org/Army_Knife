@@ -42,7 +42,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Build Time 2025.09.21</string>
+    <string>Build Time 2025.09.22</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -136,7 +136,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>当前软件环境：</string>
+    <string>当前软件环境</string>
    </property>
   </widget>
   <widget class="QLabel" name="sys">
@@ -149,7 +149,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>当前软件环境：</string>
+    <string>系统版本</string>
    </property>
   </widget>
  </widget>

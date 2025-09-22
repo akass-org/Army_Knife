@@ -13,7 +13,116 @@
   <property name="windowTitle">
    <string>Yumeyoの网络瑞士军刀</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="v4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>IPv4地址</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="v6">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>140</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>IPv6地址</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="isp">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>270</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>ISP</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="v4add">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>IPv4地址</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="v6add">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>IPv4地址</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ispinfo">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>310</y>
+      <width>261</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>IPv4地址</string>
+    </property>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -25,14 +134,12 @@
    </property>
    <widget class="QMenu" name="tools">
     <property name="enabled">
-     <bool>false</bool>
      <bool>true</bool>
     </property>
     <property name="tearOffEnabled">
      <bool>true</bool>
     </property>
     <property name="title">
-     <string>工具（开发中）</string>
      <string>工具（新建文件夹）</string>
     </property>
     <widget class="QMenu" name="Ping">

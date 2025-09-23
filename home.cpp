@@ -8,6 +8,9 @@ home::home(QWidget *parent)
     , ui(new Ui::home)
 {
     sessionNet = new QNetworkAccessManager(this);
+    QString localHostname = QHostInfo::localHostName();
+    QString beforPCname = "主机名：";
+    // QString currentMac =
     ui->setupUi(this);
     setFixedSize(this->width(),this->height()); //固定大小
     // 菜单栏：帮助
@@ -19,6 +22,9 @@ home::home(QWidget *parent)
     connect(ui -> updatelog, &QAction::triggered, this, &home::action_help_updatelog_triggered);//连接UI：更新日志
     connect(ui -> issuecnb, &QAction::triggered, this, &home::action_help_issuecnb_triggered);//连接UI：IssueCNB
     connect(ui -> issuegithub, &QAction::triggered, this, &home::action_help_issuegithub_triggered);//UI：IssueGH
+    //Hostname UI 相关设置
+    ui->hostname->setAlignment(Qt::AlignLeft);
+    ui->hostname->setText(beforPCname + localHostname);
 }
 
 home::~home()

@@ -1,5 +1,6 @@
 #ifndef HOME_H
 #define HOME_H
+//所需头文件
 #include <QMainWindow>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
@@ -9,6 +10,9 @@
 #include <QDesktopServices>
 #include <QUrl>
 #include <QMessageBox>
+#include <QHostInfo>
+#include <QDateTime>
+#include <QNetworkInterface>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

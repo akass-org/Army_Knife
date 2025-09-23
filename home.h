@@ -1,18 +1,19 @@
 #ifndef HOME_H
 #define HOME_H
 //所需头文件
-#include <QMainWindow>
-#include <QNetworkAccessManager>
-#include <QNetworkReply>
-#include <QMenuBar>
-#include <QMenu>
-#include <QAction>
-#include <QDesktopServices>
-#include <QUrl>
-#include <QMessageBox>
-#include <QHostInfo>
-#include <QDateTime>
-#include <QNetworkInterface>
+#include <QMainWindow> //主窗口
+#include <QNetworkAccessManager> //网络会话管理器
+#include <QNetworkReply> // 网络回复
+#include <QMenuBar> // 菜单栏
+#include <QMenu>// 菜单
+#include <QAction>// 指令
+#include <QDesktopServices> // 与桌面交互服务
+#include <QUrl> // QUrl类
+#include <QMessageBox> // 标准对话框支持
+#include <QHostInfo> // 主机名
+#include <QDateTime> // 时钟支持
+#include <QNetworkInterface> // 网卡信息支持
+#include <QList> // 动态数组支持
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

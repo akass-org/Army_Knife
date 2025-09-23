@@ -8,8 +8,6 @@ home::home(QWidget *parent)
     , ui(new Ui::home)
 {
     sessionNet = new QNetworkAccessManager(this);
-    QString localHostname = QHostInfo::localHostName();
-    QString beforPCname = "主机名：";
     // QString currentMac =
     ui->setupUi(this);
     setFixedSize(this->width(),this->height()); //固定大小
@@ -22,9 +20,12 @@ home::home(QWidget *parent)
     connect(ui -> updatelog, &QAction::triggered, this, &home::action_help_updatelog_triggered);//连接UI：更新日志
     connect(ui -> issuecnb, &QAction::triggered, this, &home::action_help_issuecnb_triggered);//连接UI：IssueCNB
     connect(ui -> issuegithub, &QAction::triggered, this, &home::action_help_issuegithub_triggered);//UI：IssueGH
-    //Hostname UI 相关设置
-    ui->hostname->setAlignment(Qt::AlignLeft);
-    ui->hostname->setText(beforPCname + localHostname);
+    //Hostname UI 相关设置（左、内容）
+    QString localHostname = QHostInfo::localHostName(); // 主机名实现
+    QString beforPCname = "主机名：";// setText | hostname 前的信息
+    ui->hostname->setAlignment(Qt::AlignLeft);// 文本靠左
+    ui->hostname->setText(beforPCname + localHostname);// 输出主机名：Hostname
+
 }
 
 home::~home()
@@ -33,14 +34,17 @@ home::~home()
 }
 
 
+// 网络管理器相关（远程IP、ISP获取）
 
+// 本地网路地址获取相关
 
 
 // 菜单栏业务相关定义
     //打开Wiki/文档页
 void home::action_help_wiki_triggered(){
-    QUrl wikiurl("https://ak.ne0w0r1d.top");
-    QDesktopServices::openUrl(wikiurl);
+    QUrl wikiurl("https://ak.ne0w0r1d.top");//使用QUrl定义*Wiki URL*
+    QDesktopServices::openUrl(wikiurl);//用Qt桌面服务打开*Wiki URL*
+    //以下菜单栏相关代码同理
 }
     //打开CNB
 void home::action_help_cnb_triggered(){
@@ -54,9 +58,9 @@ void home::action_help_github_triggered(){
 }
     //打开关于窗口
 void home::action_help_about_triggered(){
-    about *aboutWidget = new about(this);
-    aboutWidget->setAttribute(Qt::WA_DeleteOnClose);
-    aboutWidget->exec();
+    about *aboutWidget = new about(this);//打开about widget
+    aboutWidget->setAttribute(Qt::WA_DeleteOnClose);//
+    aboutWidget->show();//exec为模态，show为非模态，改为非模态显示避免影响操作
 }
     //打开更新日志
 void home::action_help_updatelog_triggered(){

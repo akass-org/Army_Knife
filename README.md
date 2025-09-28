@@ -8,10 +8,10 @@
 <br>
 
 ## Qt版本截图
-![Home](img\git_img\mainsc.png)<br>
+![Home](img/git_img/mainsc.png)<br>
 <center>主页</center>
 
-![About](img\git_img\aboutsc.png)<br>
+![About](img/git_img/aboutsc.png)<br>
 <center>关于</center>
 # 重构Timeline
 ## 重构原因

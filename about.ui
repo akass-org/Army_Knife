@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>关于Yumeyoの瑞士军刀</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="softname">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -32,7 +32,7 @@
     <string>Yumeyoの瑞士军刀</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="buildtime">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -45,7 +45,7 @@
     <string>Build Time 2025.09.22</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="qtver">
    <property name="geometry">
     <rect>
      <x>290</x>
@@ -58,7 +58,7 @@
     <string>基于Qt 6.9.2构建</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_4">
+  <widget class="QLabel" name="inspried">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -71,7 +71,7 @@
     <string>Inspired by NetInfoChecker</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_5">
+  <widget class="QLabel" name="oss_license">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -84,7 +84,7 @@
     <string>本软件采用LGPL 2.1开源许可</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_6">
+  <widget class="QLabel" name="qticon">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -100,7 +100,7 @@
     <pixmap resource="resource.qrc">:/Resource/qt.png</pixmap>
    </property>
   </widget>
-  <widget class="QLabel" name="label_7">
+  <widget class="QLabel" name="env_table">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -113,7 +113,7 @@
     <string>当前软件环境：</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_8">
+  <widget class="QLabel" name="sysversion_table">
    <property name="geometry">
     <rect>
      <x>20</x>

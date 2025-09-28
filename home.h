@@ -1,3 +1,12 @@
+/*
+******** Yumeyo's ARMY KNIFE（NetInfoChecker Qt Edition） ********
+******** 2025© Ne0W0r1d
+******** 2024-2025© Yumeyo
+******** LGPL 2.1 License
+******** This file about maininterface dependence ********
+*/
+
+
 #ifndef HOME_H
 #define HOME_H
 //所需头文件
@@ -38,16 +47,20 @@ private slots:
     void action_help_updatelog_triggered();//更新日志信号
     void action_help_issuecnb_triggered();//IssueCNB
     void action_help_issuegithub_triggered();//IssueGithub
-    /*Tools*/
-    // void action_tools_wol();//菜单栏WOL
-    // void action_tools_TraceRote();//Trace Route
-    // void action_tools_nat();
-
+    /*Home*/
+    // void action_homeinfo_refresh(); // 刷新按钮
+    // void action_homeinfo_settings(); //设置按钮
+    // void action_homeinfo_recordtofile(); // 记录当前IP地址按钮
+    // void action_homeinfo_privacymode(); // 隐私模式按钮
+    // void action_homeinfo_checkrecorded(); //查询已记录按钮
 private:
     Ui::home *ui;
     QNetworkAccessManager *sessionNet;
     void getV4dd();
     void getV6dd();
     void getISP();
+    void getMAC();
+    void getlocalV4();
+    void getlocalV6();
 };
 #endif // HOME_H

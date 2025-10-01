@@ -16,7 +16,7 @@ home::home(QWidget *parent)
 {
     sessionNet = new QNetworkAccessManager(this); //调用网络管理器，名为sessionNet
     ui->setupUi(this);//启动UI
-
+    action_homeinfo_refresh();
     setFixedSize(this->width(),this->height()); //固定大小
     // 菜单栏：帮助
     connect(ui -> about, &QAction::triggered, this, &home::action_help_about_triggered); // UI：关于
@@ -35,7 +35,7 @@ home::home(QWidget *parent)
     ui->hostname->setText(beforPCname + localHostname);// 输出主机名：Hostname
 
     /*主页：按钮*/
-    // connect(ui -> refresh, &QPushButton::clicked, this, &home::action_homeinfo_refresh); // 刷新主页信息
+    connect(ui -> refresh, &QPushButton::clicked, this, &home::action_homeinfo_refresh); // 刷新主页信息
 
     /*主页：IP地址、MAC地址*/
 
@@ -48,11 +48,44 @@ home::~home()
     delete ui;
 }
 
+/* 刷新按键、首次获取 */
+void home::action_homeinfo_refresh(){
+    ui -> v4add -> setText("Loading......"); // v4地址ui: 初始化
+    ui -> v6add -> setText("Loading......"); // v6地址ui: 初始化
+    ui -> ispinfo -> setText("Loading......"); // isp UI: 初始化
+    ui -> localv4add -> setText("Loading......"); // 局域网V4: UI初始化
+    ui -> localv6add -> setText("Loading......"); // 局域网V6: UI初始化
+    home::getlan();
+}
 
 // 网络管理器相关（远程IP、ISP获取）
 
 // 本地网路地址获取相关
-
+void home::getlan(){
+    QString lanv4_add, lanv6_add, macadd;
+    QList<QNetworkInterface> interfaces = QNetworkInterface::allInterfaces(); // 获取所有网卡
+    for (const QNetworkInterface &iface : interfaces) {
+        if (!iface.flags().testFlag(QNetworkInterface::IsUp) || //是否启用
+            !iface.flags().testFlag(QNetworkInterface::IsRunning) || // 是否运行
+            iface.flags().testFlag(QNetworkInterface::IsLoopBack)) // 是否回环
+            continue; // 遍历后继续
+        macadd = iface.hardwareAddress();// 设置macadd为MAC地址
+        ui->Mac->setText(macadd); // 设置UI: Mac地址为macadd变量
+        for (const QNetworkAddressEntry &entry : iface.addressEntries()) {
+            QHostAddress ip = entry.ip();
+            if (ip.protocol() == QAbstractSocket::IPv4Protocol) {
+                lanv4_add = ip.toString();
+                ui -> localv4add -> setText(lanv4_add.isEmpty() ? "暂时无法查询" : lanv4_add);
+            } else if (ip.protocol() == QAbstractSocket::IPv6Protocol) {
+                if (!ip.toString().startsWith("fe80"))
+                lanv6_add = ip.toString();
+                ui -> localv6add -> setText(lanv6_add.isEmpty() ? "暂时无法查询" : lanv6_add);
+                }
+            }
+            break;
+        }
+    }
+//void getlanv4()
 
 /* 菜单栏业务相关定义 */
     /*打开文档页*/

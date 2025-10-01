@@ -20,6 +20,7 @@
 #include <QUrl> // QUrl类
 #include <QMessageBox> // 标准对话框支持
 #include <QHostInfo> // 主机名
+#include <QHostAddress> // 主机地址
 #include <QDateTime> // 时钟支持
 #include <QNetworkInterface> // 网卡信息支持
 #include <QList> // 动态数组支持
@@ -37,6 +38,13 @@ class home : public QMainWindow
 public:
     home(QWidget *parent = nullptr);
     ~home();
+    void getwanv4(); // 获取广域v4信息
+    void getwanv6(); // 获取广域v6信息
+    void getisp(); // GetISP
+    void getmac(); // 获取MAC地址
+    //void getlanv4();// 获取本地V4
+    //void getlanv6(); // 获取本地V6
+    void getlan();//
 
 private slots:
     /*Help*/
@@ -48,7 +56,7 @@ private slots:
     void action_help_issuecnb_triggered();//IssueCNB
     void action_help_issuegithub_triggered();//IssueGithub
     /*Home*/
-    // void action_homeinfo_refresh(); // 刷新按钮
+    void action_homeinfo_refresh(); // 刷新按钮
     // void action_homeinfo_settings(); //设置按钮
     // void action_homeinfo_recordtofile(); // 记录当前IP地址按钮
     // void action_homeinfo_privacymode(); // 隐私模式按钮
@@ -56,11 +64,5 @@ private slots:
 private:
     Ui::home *ui;
     QNetworkAccessManager *sessionNet;
-    void getV4dd();
-    void getV6dd();
-    void getISP();
-    void getMAC();
-    void getlocalV4();
-    void getlocalV6();
 };
 #endif // HOME_H

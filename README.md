@@ -24,11 +24,11 @@
 - 为了未来的可扩展性和移植性
 
 ## Timeline
-[X] UI基础布局（Branch Anno）<br>
-[ ] 主页功能实现(Branch Anno)<br>
-[ ] WhatsNAT网络转换层级检测、PingCS、PingGNT功能实现(Branch Tomorin)<br>
+[X] UI基础布局（Anno）<br>
+[ ] 主页功能实现(Rana)<br>
+[ ] WhatsNAT网络转换层级检测、PingCS、PingGNT功能实现(Tomorin)<br>
 [ ] TrackNow路由检测、PingVAL功能实现<br>
-[ ] 全新UI（Version 2.X and newer，Branch Vivian)<br>
+[ ] 全新UI（Version 1.X and newer，Branch Vivian)<br>
 [♾️] 长期维护，新增功能，代码简化（forever）
 
 ## Yumeyo Army Knife（Qt）主要分支
@@ -38,6 +38,7 @@
 
 | 主版本开发代号 | 版本号 | 主版本特点 |
 | ----- | ----- | ----- |
-| **Anno** | **0.X.anno** | **Prototype**  |
+| ~~Anno~~ | ~~0.X.anno~~ | ~~Prototype~~ |
+| **Rana** | **0.X.rana** | **Alpha Testing** |
 | Tomorin | 1.X.tomorin | Stable |
 | Vivian | 1.X.vivian | New Interface |

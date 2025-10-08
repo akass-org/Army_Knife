@@ -36,7 +36,7 @@
 
 | 主版本开发代号 | 版本号 | 主版本特点 |
 | ----- | ----- | ----- |
-| Anno | 0.X.anno | Prototype |
-| Rana | 0.X.rana | Alpha Testing |
+| ~~Anno~~ | ~~0.X.anno~~ | ~~Prototype~~ |
+| **Rana** | **0.X.rana** | **Alpha Testing** |
 | Tomorin | 1.X.tomorin | Stable |
 | Vivian | 1.X.vivian | New Interface |

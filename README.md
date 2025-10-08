@@ -1,5 +1,6 @@
 > [!important]
-> Yumeyo Army Knife 目前还是原型阶段！并不能正常作为日用工具使用！如要使用，请使用e语言版本的NetInfoChecker 网络综合查询器 ！！！
+> >Anno分支已经结束，请前往Master分支参与Rana分支
+> >
 ## 关于NetInfoChecker 网络综合查询器 & Yumeyoの瑞士军刀
 ### NetInfoChecker 网络综合查询器（作者Yumeyo，基于e语言）
 > 网络综合查询器由夢酱设计, 内置多个接口, 支持快速查国内出口IP,国外出口/走代理IP, 三大+教育+双栈+测漏 多出口测试, UDP测试, 手动查IP/MAC/剪贴板, 本机所有网卡及IP/DNS, IPV6有效期, IP查纯, 记录/读取外网IP, 查IP在记录中出现次数, 快速Ping/Tracert/长Ping, 一键ipcfg/release/renew/flushdns, RFC3489/5780NAT测试, CS完美平台延迟测试(Ping)/全球网测骨干节点(北上广成武)延迟测试, IPERF测速工具, 本机硬件检测, 快速跳转控制面板/常用网站, 自由查询, 悬浮信息时间显示, WakeOnLan等功能.
@@ -23,7 +24,7 @@
 
 ## Timeline
 [X] UI基础布局（Branch Anno）<br>
-[ ] 主页功能实现(Branch Anno)<br>
+[ ] 主页功能实现(Branch Rana)<br>
 [ ] WhatsNAT网络转换层级检测、PingCS、PingGNT功能实现(Branch Tomorin)<br>
 [ ] TrackNow路由检测、PingVAL功能实现<br>
 [ ] 全新UI（Version 2.X and newer，Branch Vivian)<br>
@@ -34,8 +35,9 @@
 
 > 加粗为当前阶段
 
-| 主版本开发代号 | 版本号 | 主版本特点 |
+| 主版本开发代号 | 版本号 | 分支状态 |
 | ----- | ----- | ----- |
-| **Anno** | **0.X.anno** | **Prototype**  |
+| ~~Anno~~ | ~~0.X.anno~~ | ~~Prototype~~  |
+| **Rana** | **0.X.rana** | **Alpha Testing**  |
 | Tomorin | 1.X.tomorin | Stable |
 | Vivian | 1.X.vivian | New Interface |

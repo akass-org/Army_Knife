@@ -7,8 +7,8 @@
 */
 
 
-#include "about.h"
-#include "ui_about.h"
+#include "About.h"
+#include "ui_About.h"
 
 
 about::about(QWidget *parent)
@@ -21,9 +21,8 @@ about::about(QWidget *parent)
     QString systemname = QSysInfo::kernelType();// 获取内核信息
     QString distro = QSysInfo::prettyProductName();// 获取发行版名称
     QString systemver = QSysInfo::productVersion();// 获取系统版本
-    ui->softver_info->setText("0.3.anno.prototype.251001");//版本信息
-    ui->env->setText(systemname + " (" + distro + ")");// 显示系统环境
-    ui->sys->setText(systemver);// 显示系统版本
+    ui->softver_info->setText("0.4.rana.alpha.251009");//版本信息
+    ui->env->setText(systemname.toUpper() + " (" + distro + ")");// 显示系统环境
 }
 
 about::~about()

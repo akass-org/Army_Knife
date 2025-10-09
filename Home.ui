@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Yumeyoの瑞士军刀</string>
+   <string>瑞士军刀</string>
   </property>
   <widget class="QWidget" name="Home">
    <widget class="QPushButton" name="pushButton">
@@ -101,7 +101,7 @@
      <rect>
       <x>20</x>
       <y>30</y>
-      <width>134</width>
+      <width>135</width>
       <height>58</height>
      </rect>
     </property>
@@ -144,6 +144,9 @@
     <layout class="QFormLayout" name="formLayout_3">
      <item row="0" column="0">
       <widget class="QLabel" name="v6">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="font">
         <font>
          <pointsize>16</pointsize>
@@ -156,6 +159,9 @@
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="v6add">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="font">
         <font>
          <pointsize>10</pointsize>
@@ -180,6 +186,9 @@
     <layout class="QFormLayout" name="formLayout_4">
      <item row="0" column="0">
       <widget class="QLabel" name="isp">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="font">
         <font>
          <pointsize>16</pointsize>
@@ -192,6 +201,9 @@
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="ispinfo">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="font">
         <font>
          <pointsize>10</pointsize>
@@ -209,7 +221,7 @@
      <rect>
       <x>400</x>
       <y>30</y>
-      <width>134</width>
+      <width>135</width>
       <height>58</height>
      </rect>
     </property>
@@ -246,7 +258,7 @@
       <x>400</x>
       <y>110</y>
       <width>351</width>
-      <height>58</height>
+      <height>61</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout_5">
@@ -294,7 +306,7 @@
         </font>
        </property>
        <property name="text">
-        <string>当前网卡Mac地址</string>
+        <string>当前网卡MAC地址</string>
        </property>
       </widget>
      </item>
@@ -330,7 +342,7 @@
    </widget>
    <widget class="QPushButton" name="refresh">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -351,7 +363,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>24</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="tools">

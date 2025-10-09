@@ -1,8 +1,7 @@
-# <center>欢迎来到Alpha版本，Rana分支，感谢您的贡献！</center>
+# <center> 欢迎来到Alpha版本，Rana分支，感谢您的贡献！</center>
+
 ## 关于NetInfoChecker 网络综合查询器 & 瑞士军刀
-[官网](https://armyknife.ne0w0r1d.top)
-## 关于NetInfoChecker 网络综合查询器 & Yumeyoの瑞士军刀
-<center>[首页](https://armyknife.ne0w0r1d.top)</center>
+[官网](https://armyknife.ne0w0r1d.top)<br>
 
 
 ### NetInfoChecker 网络综合查询器（作者Yumeyo，基于e语言）
@@ -23,6 +22,7 @@
 - e语言容易被杀毒软件、反作弊等安全类型软件一秒六棍
 - Qt内置网络库，可以实现80% NetInfoChecker 的功能
 - 基于QWidget，可以为Windows、Mac、Linux进行一次开发多端部署
+    - ~~ 不排除未来用Qt Quick和转向Flutter ~~
 - 为了未来的可扩展性和移植性
 
 ## Timeline

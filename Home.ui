@@ -82,9 +82,9 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>520</y>
+      <y>510</y>
       <width>231</width>
-      <height>31</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
@@ -187,7 +187,7 @@
      <item row="0" column="0">
       <widget class="QLabel" name="isp">
        <property name="enabled">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="font">
         <font>
@@ -202,7 +202,7 @@
      <item row="1" column="0">
       <widget class="QLabel" name="ispinfo">
        <property name="enabled">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="font">
         <font>
@@ -356,6 +356,24 @@
      <string>刷新</string>
     </property>
    </widget>
+   <widget class="QLabel" name="priority">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>530</y>
+      <width>231</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Loading……</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -363,7 +381,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>23</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="tools">

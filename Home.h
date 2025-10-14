@@ -24,6 +24,7 @@
 #include <QDateTime> // 时钟支持
 #include <QNetworkInterface> // 网卡信息支持
 #include <QList> // 动态数组支持
+#include <QRegularExpression> // 正则表达式支持
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -40,11 +41,9 @@ public:
     ~home();
     void getwanv4(); // 获取广域v4信息
     void getwanv6(); // 获取广域v6信息
-    void getisp(); // GetISP
-    void getmac(); // 获取MAC地址
-    //void getlanv4();// 获取本地V4
-    //void getlanv6(); // 获取本地V6
-    void getlan();//
+    void getisp(); // 获取ISP
+    void getlan(); // 获取LAN相关
+    void getpriority();// 查询IP优先级
 private slots:
     /*Help*/
     void action_help_wiki_triggered();//wiki信号

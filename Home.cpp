@@ -14,7 +14,6 @@ home::home(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::home)
 {
-    sessionNet = new QNetworkAccessManager(this); //调用网络管理器，名为sessionNet
     ui->setupUi(this);//启动UI
     action_homeinfo_refresh();
     setFixedSize(this->width(),this->height()); //固定大小
@@ -47,28 +46,78 @@ home::~home()
     delete ui;
 }
 
+/* 菜单栏业务相关定义 */
+/*打开文档页*/
+void home::action_help_wiki_triggered(){
+    QUrl wikiurl("https://armyknife.ne0w0r1d.top");//使用QUrl定义*Wiki URL*
+    QDesktopServices::openUrl(wikiurl);//用Qt桌面服务打开*Wiki URL*
+
+    /*以下菜单栏相关代码同理 QUrl & Desktup Services*/
+}
+/*打开CNB*/
+void home::action_help_cnb_triggered(){
+    QUrl cnb_repo("https://cnb.cool/neoengine_dev/Yumeyo_no_Army_Knife");
+    QDesktopServices::openUrl(cnb_repo);
+}
+/*打开github*/
+void home::action_help_github_triggered(){
+    QUrl wikiurl("https://github.com/Ne0W0r1d/Yumeyo_no_Army_Knife");
+    QDesktopServices::openUrl(wikiurl);
+}
+/*打开关于窗口*/
+void home::action_help_about_triggered(){
+    about *aboutWidget = new about(this);//打开about组件
+    aboutWidget->setAttribute(Qt::WA_DeleteOnClose);//
+    aboutWidget->show();//exec为模态，show为非模态，改为非模态显示避免影响操作
+}
+/*打开更新日志*/
+void home::action_help_updatelog_triggered(){
+    QUrl updateurl("https://cnb.cool/neoengine_dev/Yumeyo_no_Army_Knife/-/releases");
+    QDesktopServices::openUrl(updateurl);
+}
+/*IssueCNB*/
+void home::action_help_issuecnb_triggered(){
+    QUrl issuecnb("https://cnb.cool/neoengine_dev/Yumeyo_no_Army_Knife/-/issues");
+    QDesktopServices::openUrl(issuecnb);
+}
+/*IssueGithub*/
+void home::action_help_issuegithub_triggered(){
+    QUrl issuegithub("https://github.com/Ne0W0r1d/Yumeyo_no_Army_Knife/issues");
+    QDesktopServices::openUrl(issuegithub);
+}
+
+
+
 /* 刷新按键、首次获取 */
 void home::action_homeinfo_refresh(){
     ui -> v4add -> setText("Loading......"); // v4地址ui: 初始化
     ui -> v6add -> setText("Loading......"); // v6地址ui: 初始化
-    ui -> ispinfo -> setText("请等待后续版本喵"); // isp UI: 初始化
+    ui -> ispinfo -> setText("Loading......"); // isp UI: 初始化
     ui -> localv4add -> setText("Loading......"); // 局域网V4: UI初始化
     ui -> localv6add -> setText("Loading......"); // 局域网V6: UI初始化
     home::getlan();
     home::getwanv4();
     home::getwanv6();
-    // home::getisp();
+    home::getisp();
+    // home::getpriority();
 }
 
-// 远程IP、ISP获取
-/* 别急！我懒癌犯了！
-void home::getisp(){
-    QNetworkAccessManager *ispget = new QNetworkAccessManager(this);
-    QNetworkRequest request(QUrl("https://cip.cc"));
-    QNetworkReply *isprep = ispget->get(request);
+
+
+// IP优先级获取
+/*
+void home::getpriority(){
+    QNetworkAccessManager *priorityget = new QNetworkAccessManager(this);
+    QNetworkRequest request(QUrl("https://test.ipw.cn"));
+    QNetworkReply *priorityreply = priorityget->get(request);
+    connect(priorityreply, &QNetworkReply::finished, this, [this, priorityreply](){
+
+}
 
 }
 */
+// 远程IP、ISP获取
+
 void home::getwanv4() // V4
 {
     QNetworkAccessManager *v4manager = new QNetworkAccessManager(this); // 设置新的QNAM
@@ -86,7 +135,8 @@ void home::getwanv4() // V4
         v4reply->deleteLater(); // 从我的内存滚出去😡
     });
 }
-/*以下V6代码同理*/
+/*以下代码同理*/
+
 void home::getwanv6()
 {
     QNetworkAccessManager *v6manager = new QNetworkAccessManager(this);
@@ -102,6 +152,32 @@ void home::getwanv6()
             ui -> v6add -> setText("查询失败🐱看看我的右边有没有输出喵");
         }
         v6reply->deleteLater();
+    });
+}
+
+void home::getisp() {
+    QNetworkAccessManager *ispget = new QNetworkAccessManager(this);
+    QNetworkRequest request(QUrl("https://cip.cc"));
+    QNetworkReply *ispreply = ispget->get(request);
+    connect(ispreply, &QNetworkReply::finished, this, [this, ispreply]() {
+        if (ispreply->error() == QNetworkReply::NoError) {
+            QString replyText = QString::fromUtf8(ispreply->readAll());
+            QString isp;
+            qDebug() << "ISP:" << isp;
+            QRegularExpression regex(R"(数据二\s*:\s*(.*))");
+            QRegularExpressionMatch match = regex.match(replyText);
+            if (match.hasMatch()) {
+                qDebug() << "ISP:" << isp;
+                isp = match.captured(1).trimmed();
+                ui->ispinfo->setText(isp);
+            } else {
+                isp = "未知";
+            }
+        }else{
+            qDebug() << "请求失败：" <<ispreply->errorString();
+            ui -> ispinfo -> setText("请求失败🐱");
+        }
+        ispreply->deleteLater();
     });
 }
 
@@ -132,42 +208,4 @@ void home::getlan(){
         }
     }
 
-/* 菜单栏业务相关定义 */
-    /*打开文档页*/
-void home::action_help_wiki_triggered(){
-    QUrl wikiurl("https://armyknife.ne0w0r1d.top");//使用QUrl定义*Wiki URL*
-    QDesktopServices::openUrl(wikiurl);//用Qt桌面服务打开*Wiki URL*
 
-    /*以下菜单栏相关代码同理 QUrl & Desktup Services*/
-}
-    /*打开CNB*/
-void home::action_help_cnb_triggered(){
-    QUrl cnb_repo("https://cnb.cool/neoengine_dev/Yumeyo_no_Army_Knife");
-    QDesktopServices::openUrl(cnb_repo);
-}
-    /*打开github*/
-void home::action_help_github_triggered(){
-    QUrl wikiurl("https://github.com/Ne0W0r1d/Yumeyo_no_Army_Knife");
-    QDesktopServices::openUrl(wikiurl);
-}
-    /*打开关于窗口*/
-void home::action_help_about_triggered(){
-    about *aboutWidget = new about(this);//打开about组件
-    aboutWidget->setAttribute(Qt::WA_DeleteOnClose);//
-    aboutWidget->show();//exec为模态，show为非模态，改为非模态显示避免影响操作
-}
-    /*打开更新日志*/
-void home::action_help_updatelog_triggered(){
-    QUrl updateurl("https://cnb.cool/neoengine_dev/Yumeyo_no_Army_Knife/-/releases");
-    QDesktopServices::openUrl(updateurl);
-}
-    /*IssueCNB*/
-void home::action_help_issuecnb_triggered(){
-    QUrl issuecnb("https://cnb.cool/neoengine_dev/Yumeyo_no_Army_Knife/-/issues");
-    QDesktopServices::openUrl(issuecnb);
-}
-    /*IssueGithub*/
-void home::action_help_issuegithub_triggered(){
-    QUrl issuegithub("https://github.com/Ne0W0r1d/Yumeyo_no_Army_Knife/issues");
-    QDesktopServices::openUrl(issuegithub);
-}

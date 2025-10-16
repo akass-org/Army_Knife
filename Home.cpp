@@ -149,7 +149,7 @@ void home::getisp() {
         if (ispreply->error() == QNetworkReply::NoError) {
             QString replyText = QString::fromUtf8(ispreply->readAll());
             QString isp;
-            QRegularExpression regex(R"(数据二\s*:\s*(.*))");
+            static const QRegularExpression regex(R"(数据二\s*:\s*(.*))");
             QRegularExpressionMatch match = regex.match(replyText);
             if (match.hasMatch()) {
                 isp = match.captured(1).trimmed();
@@ -176,7 +176,7 @@ void home::getpriority(){ // 连接优先级
             QString pri;
             if(res.contains("ipv6",Qt::CaseInsensitive) || res.contains(":")){ // 设置判断标识符 - V6
                 pri="IP优先模式：IPv6优先";
-            } else if(res.contains("ipv6",Qt::CaseInsensitive) || res.contains(":")){
+            } else if(res.contains("ipv4",Qt::CaseInsensitive) || res.contains(".")){
                 pri="IP优先模式：IPv4优先";
             } else{
                 pri="暂时无法查询，请检查网络情况";

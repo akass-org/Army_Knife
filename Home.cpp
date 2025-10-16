@@ -99,26 +99,9 @@ void home::action_homeinfo_refresh(){
     home::getwanv4();
     home::getwanv6();
     home::getisp();
-    // home::getpriority();
+    home::getpriority();
 }
 
-
-
-// IP优先级获取
-/*
-void home::getpriority(){
-    QNetworkAccessManager *priorityget = new QNetworkAccessManager(this);
-    QNetworkRequest request(QUrl("https://test.ipw.cn"));
-    QNetworkReply *priorityreply = priorityget->get(request);
-    connect(priorityreply, &QNetworkReply::finished, this, [this, priorityreply](){
-        if( priorityreply -> error() == QNetworkReply::NoError ){
-            QString res = QString::fromUtf8(priorityreply->readAll()).trimmed();
-            QString priority;
-            if
-        }
-}
-
-}*/
 // 远程IP、ISP获取
 
 void home::getwanv4() // V4
@@ -183,10 +166,32 @@ void home::getisp() {
     });
 }
 
+void home::getpriority(){ // 连接优先级
+    QNetworkAccessManager *priorityget = new QNetworkAccessManager(this);
+    QNetworkRequest request(QUrl("https://test.ipw.cn"));
+    QNetworkReply *priorityreply = priorityget->get(request);
+    connect(priorityreply, &QNetworkReply::finished, this, [this, priorityreply](){
+        if(priorityreply->error() == QNetworkReply::NoError){
+            QString res = QString::fromUtf8(priorityreply->readAll()).trimmed(); // 数据转换（原始字节 -> UTF字符串）
+            QString pri;
+            if(res.contains("ipv6",Qt::CaseInsensitive) || res.contains(":")){ // 设置判断标识符 - V6
+                pri="IP优先模式：IPv6优先";
+            } else if(res.contains("ipv6",Qt::CaseInsensitive) || res.contains(":")){
+                pri="IP优先模式：IPv4优先";
+            } else{
+                pri="暂时无法查询，请检查网络情况";
+            }
+            qDebug()<<pri;
+            ui -> priority -> setText(pri);
+            priorityreply->deleteLater();
+        }
+    });
+}
+
 // 本地网路地址获取相关
 void home::getlan(){
     QString lanv4_add, lanv6_add, macadd;
-    QList<QNetworkInterface> interfaces = QNetworkInterface::allInterfaces(); // 获取所有网卡
+    const QList<QNetworkInterface> interfaces = QNetworkInterface::allInterfaces(); // 获取所有网卡
     for (const QNetworkInterface &iface : interfaces) {
         if (!iface.flags().testFlag(QNetworkInterface::IsUp) || //是否启用
             !iface.flags().testFlag(QNetworkInterface::IsRunning) || // 是否运行

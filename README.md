@@ -38,6 +38,6 @@
 > 加粗为当前阶段
 
 | 开发代号 | 版本号 | 分支状态 |
-| ----- | ----- | ----- | ----- |
+| ----- | ----- | ----- |
 | ~~Anno~~ | ~~0.3.anno.prototype.[builddate]~~ | ~~Prototype，已停止维护~~ |
 | **Rana** | **0.4.rana.alpha.[builddate]** | **Alpha** |

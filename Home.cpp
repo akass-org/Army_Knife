@@ -111,11 +111,14 @@ void home::getpriority(){
     QNetworkRequest request(QUrl("https://test.ipw.cn"));
     QNetworkReply *priorityreply = priorityget->get(request);
     connect(priorityreply, &QNetworkReply::finished, this, [this, priorityreply](){
-
+        if( priorityreply -> error() == QNetworkReply::NoError ){
+            QString res = QString::fromUtf8(priorityreply->readAll()).trimmed();
+            QString priority;
+            if
+        }
 }
 
-}
-*/
+}*/
 // 远程IP、ISP获取
 
 void home::getwanv4() // V4
@@ -163,19 +166,18 @@ void home::getisp() {
         if (ispreply->error() == QNetworkReply::NoError) {
             QString replyText = QString::fromUtf8(ispreply->readAll());
             QString isp;
-            qDebug() << "ISP:" << isp;
             QRegularExpression regex(R"(数据二\s*:\s*(.*))");
             QRegularExpressionMatch match = regex.match(replyText);
             if (match.hasMatch()) {
-                qDebug() << "ISP:" << isp;
                 isp = match.captured(1).trimmed();
+                qDebug() << "ISP:" << isp;
                 ui->ispinfo->setText(isp);
             } else {
-                isp = "未知";
+                isp = "查询不到喵🐱";
             }
         }else{
-            qDebug() << "请求失败：" <<ispreply->errorString();
-            ui -> ispinfo -> setText("请求失败🐱");
+            qDebug() << "请求失败喵：" <<ispreply->errorString();
+            ui -> ispinfo -> setText("请求失败喵🐱");
         }
         ispreply->deleteLater();
     });
@@ -196,12 +198,12 @@ void home::getlan(){
             QHostAddress ip = entry.ip(); // 获取IP地址
             if (ip.protocol() == QAbstractSocket::IPv4Protocol) {// 检测是否有V4
                 lanv4_add = ip.toString(); // 获取V4字符串
-                ui -> localv4add -> setText(lanv4_add.isEmpty() ? "查询失败🐱！" : lanv4_add);// UI：输出V4字符串
+                ui -> localv4add -> setText(lanv4_add.isEmpty() ? "查询失败喵🐱！" : lanv4_add);// UI：输出V4字符串
             } else if (ip.protocol() == QAbstractSocket::IPv6Protocol) {//检测是否有V6
                 if (!ip.toString().startsWith("fe80"))// 屏蔽本地IP地址
                 lanv6_add = ip.toString(); // 获取V6字符串
-                ui -> localv6add -> setText(lanv6_add.isEmpty() ? "请求失败🐱请把鼠标放在我上面喵" : lanv6_add); // UI：输出V6字符串
-                ui -> localv6add -> setToolTip(lanv6_add.isEmpty() ? "请手动检查IP ADDR/IPCONFIG🐱是否存在V6地址喵" : lanv6_add);
+                ui -> localv6add -> setText(lanv6_add.isEmpty() ? "请求失败喵🐱请把鼠标放在我上面喵" : lanv6_add); // UI：输出V6字符串
+                ui -> localv6add -> setToolTip(lanv6_add.isEmpty() ? "请手动检查IP ADDR/IPCONFIG喵🐱是否存在V6地址喵" : lanv6_add);
                 }
             }
             break; // 业务结束

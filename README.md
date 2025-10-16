@@ -37,11 +37,7 @@
 
 > 加粗为当前阶段
 
-| 主版本开发代号 | 版本号 | 分支状态 | EOL时间 |
+| 开发代号 | 版本号 | 分支状态 |
 | ----- | ----- | ----- | ----- |
-| ~~Anno~~ | ~~0.3.anno.prototype.[builddate]~~ | ~~Prototype~~ | 251009 |
-| **Rana** | **0.4.rana.alpha.[builddate]** | **Alpha** | Live |
-| Astra | 0.7.astra.beta.[milestone+date] | Beta | Not right now |
-| Tomorin | 1.X.tomorin.[Revise ID] | Stable - LTS | Not right now |
-| Vivian | 1.X.vivian.[milestone] | New UI Beta | Not right now |
-| Soyo | 2.X.soyo.[Revise ID] | New UI Stable - LTS | Not right now |
+| ~~Anno~~ | ~~0.3.anno.prototype.[builddate]~~ | ~~Prototype，已停止维护~~ |
+| **Rana** | **0.4.rana.alpha.[builddate]** | **Alpha** |

@@ -425,6 +425,7 @@
      <addaction name="issuecnb"/>
      <addaction name="issuegithub"/>
     </widget>
+    <addaction name="action"/>
     <addaction name="about"/>
     <addaction name="wiki"/>
     <addaction name="separator"/>
@@ -516,6 +517,14 @@
   <action name="aboutqt">
    <property name="text">
     <string>关于Qt</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>设备信息</string>
    </property>
   </action>
  </widget>

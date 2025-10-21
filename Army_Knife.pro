@@ -11,15 +11,21 @@ CONFIG += c++17
 SOURCES += \
     About.cpp \
     Home.cpp \
-    main.cpp
+    main.cpp \
+    tools/deviceinfo.cpp \
+    tools/wakenow.cpp
 
 HEADERS += \
     About.h \
-    Home.h
+    Home.h \
+    tools/deviceinfo.h \
+    tools/wakenow.h
 
 FORMS += \
     About.ui \
-    Home.ui
+    Home.ui \
+    tools/deviceinfo.ui \
+    tools/wakenow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

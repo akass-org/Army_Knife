@@ -107,12 +107,12 @@ void home::action_homeinfo_refresh(){
 void home::getwanv4() // V4
 {
     QNetworkAccessManager *v4manager = new QNetworkAccessManager(this); // 设置新的QNAM
-    QNetworkRequest request(QUrl("https://4.ipw.cn")); // 设置Request API为ipw.cn（TODO LIST - 支持多API，并研究单出口API）
+    QNetworkRequest request(QUrl("https://4.ipw.cn")); // 设置Request API为ipw.cn（TODO LIST - 支持多API，并研究出口API）
     QNetworkReply *v4reply = v4manager->get(request); // 设置Manager操作为request
     connect(v4reply, &QNetworkReply::finished, this, [this, v4reply]() { // 连接V4 Reply
         if (v4reply->error() == QNetworkReply::NoError) { // 判定是否有错误
             QString ipv4 = QString(v4reply->readAll()).trimmed(); // 设置IPV4变量为v4返回信息
-            qDebug() << "公网 IPv4:" << ipv4; // Qt调试输出信息
+            qInfo() << "公网 IPv4:" << ipv4; // Qt调试输出信息
             ui -> v4add -> setText(ipv4); // 显示在UI中
         } else {
             qDebug() << "请求失败:" << v4reply->errorString(); // 输出错误信息
@@ -131,7 +131,7 @@ void home::getwanv6()
     connect(v6reply, &QNetworkReply::finished, this, [this, v6reply]() {
         if (v6reply->error() == QNetworkReply::NoError) {
             QString ipv6 = QString(v6reply->readAll()).trimmed();
-            qDebug() << "公网 IPv6:" << ipv6;
+            qInfo() << "公网 IPv6:" << ipv6;
             ui -> v6add -> setText(ipv6);
         } else {
             qDebug() << "请求失败:" << v6reply->errorString();
@@ -149,14 +149,16 @@ void home::getisp() {
         if (ispreply->error() == QNetworkReply::NoError) {
             QString replyText = QString::fromUtf8(ispreply->readAll());
             QString isp;
-            static const QRegularExpression regex(R"(数据二\s*:\s*(.*))");
+            static const QRegularExpression regex(R"(数据二\s*:\s*(.*))");// 正则表达式提取
             QRegularExpressionMatch match = regex.match(replyText);
             if (match.hasMatch()) {
                 isp = match.captured(1).trimmed();
-                qDebug() << "ISP:" << isp;
+                qInfo() << "ISP:" << isp;
                 ui->ispinfo->setText(isp);
             } else {
                 isp = "查询不到喵🐱";
+                ui->ispinfo->setText(isp);
+                qDebug() << "查询不到喵：" <<ispreply->errorString();
             }
         }else{
             qDebug() << "请求失败喵：" <<ispreply->errorString();
@@ -176,12 +178,14 @@ void home::getpriority(){ // 连接优先级
             QString pri;
             if(res.contains("ipv6",Qt::CaseInsensitive) || res.contains(":")){ // 设置判断标识符 - V6
                 pri="IP优先模式：IPv6优先";
+                qInfo()<<pri;
             } else if(res.contains("ipv4",Qt::CaseInsensitive) || res.contains(".")){
                 pri="IP优先模式：IPv4优先";
+                qInfo()<<pri;
             } else{
                 pri="暂时无法查询，请检查网络情况";
+                qDebug() << "暂时无法查询，请检查网络情况喵";
             }
-            qDebug()<<pri;
             ui -> priority -> setText(pri);
             priorityreply->deleteLater();
         }
@@ -211,6 +215,10 @@ void home::getlan(){
                 ui -> localv6add -> setToolTip(lanv6_add.isEmpty() ? "请手动检查IP ADDR/IPCONFIG喵🐱是否存在V6地址喵" : lanv6_add);
                 }
             }
+            qDebug() << "请检查网络配置喵🐱" <<lanv4_add.isEmpty();
+            qInfo() << "本地IPv4" << lanv4_add;
+            qDebug() << "请手动检查IP ADDR/IPCONFIG喵🐱是否存在V6地址喵" <<lanv6_add.isEmpty();
+            qInfo() << "本地IPv6：" << lanv6_add;
             break; // 业务结束
         }
     }

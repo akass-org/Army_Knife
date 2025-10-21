@@ -45,7 +45,6 @@ public:
     //void getlanv4();// 获取本地V4
     //void getlanv6(); // 获取本地V6
     void getlan();//
-
 private slots:
     /*Help*/
     void action_help_wiki_triggered();//wiki信号

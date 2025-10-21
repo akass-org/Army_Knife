@@ -17,45 +17,45 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>30</y>
-     <width>231</width>
-     <height>21</height>
+     <y>20</y>
+     <width>121</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>12</pointsize>
-     <bold>true</bold>
+     <pointsize>20</pointsize>
+     <bold>false</bold>
     </font>
    </property>
    <property name="text">
-    <string>Yumeyoの瑞士军刀</string>
+    <string>瑞士军刀</string>
    </property>
   </widget>
   <widget class="QLabel" name="qtver">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>220</y>
-     <width>101</width>
+     <x>310</x>
+     <y>240</y>
+     <width>81</width>
      <height>20</height>
     </rect>
    </property>
    <property name="text">
-    <string>基于Qt 6.9.2构建</string>
+    <string>基于Qt 6构建</string>
    </property>
   </widget>
   <widget class="QLabel" name="inspried">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>240</y>
-     <width>171</width>
+     <x>140</x>
+     <y>40</y>
+     <width>221</width>
      <height>20</height>
     </rect>
    </property>
    <property name="text">
-    <string>Inspired by NetInfoChecker</string>
+    <string>Inspired by Yumeyo NetInfoChecker</string>
    </property>
   </widget>
   <widget class="QLabel" name="oss_license">
@@ -100,19 +100,6 @@
     <string>当前软件环境：</string>
    </property>
   </widget>
-  <widget class="QLabel" name="sysversion_table">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>100</y>
-     <width>61</width>
-     <height>19</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>系统版本：</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="env">
    <property name="geometry">
     <rect>
@@ -124,19 +111,6 @@
    </property>
    <property name="text">
     <string>当前软件环境</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="sys">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>100</y>
-     <width>301</width>
-     <height>19</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>系统版本</string>
    </property>
   </widget>
   <widget class="QLabel" name="softver">

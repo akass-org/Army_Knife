@@ -15,9 +15,8 @@ about::about(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::about)
 {
-    setFixedSize(400,300);
     ui->setupUi(this);
-
+    setFixedSize(this->width(),this->height());
     QString systemname = QSysInfo::kernelType();// 获取内核信息
     QString distro = QSysInfo::prettyProductName();// 获取发行版名称
     QString systemver = QSysInfo::productVersion();// 获取系统版本

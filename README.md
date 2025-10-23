@@ -19,7 +19,7 @@
 - e语言容易被杀毒软件、反作弊等安全类型软件一秒六棍
 - Qt内置网络库，可以实现80% NetInfoChecker 的功能
 - 基于QWidget，可以为Windows、Mac、Linux进行一次开发多端部署
-    - ~~ 不排除未来用Qt Quick和转向Flutter ~~
+    - ~~不排除未来用Qt Quick和转向Flutter~~
 - 为了未来的可扩展性和移植性
 
 ## TO-DO LIST

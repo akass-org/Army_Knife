@@ -101,7 +101,7 @@
      <rect>
       <x>20</x>
       <y>30</y>
-      <width>135</width>
+      <width>351</width>
       <height>58</height>
      </rect>
     </property>
@@ -118,7 +118,7 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
+     <item row="1" column="0" colspan="2">
       <widget class="QLabel" name="v4add">
        <property name="font">
         <font>

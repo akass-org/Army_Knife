@@ -8,11 +8,8 @@
 <br>
 
 ## Qt版本截图
-![Home](git_img/mainsc.png)<br>
+![Home](git_img/sc.png)<br>
 <center>主页</center>
-
-![About](git_img/aboutsc.png)<br>
-<center>关于</center>
 
 # 重构Timeline
 ## 重构原因

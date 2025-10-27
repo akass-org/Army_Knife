@@ -13,13 +13,15 @@ SOURCES += \
     Home.cpp \
     main.cpp \
     tools/deviceinfo.cpp \
-    tools/wakenow.cpp
+    tools/wakenow.cpp \
+    version.cpp
 
 HEADERS += \
     About.h \
     Home.h \
     tools/deviceinfo.h \
-    tools/wakenow.h
+    tools/wakenow.h \
+    version.h
 
 FORMS += \
     About.ui \

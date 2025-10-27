@@ -68,7 +68,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>本软件采用LGPL 2.1开源许可</string>
+    <string>本软件采用LGPL 3开源许可</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="qticon">

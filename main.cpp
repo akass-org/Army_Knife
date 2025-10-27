@@ -4,7 +4,10 @@
 #include <QTextStream>
 #include <QDebug>
 #include <QDateTime>
+#include "version.h"
 
+
+QString AK_VERSION = "0.4.rana.alpha.251027";
 
 void customMessageHandler(QtMsgType type, const QMessageLogContext &, const QString &msg)
 {
@@ -55,6 +58,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     qInstallMessageHandler(customMessageHandler);
+    QString Version = "Test";
     home w;
     w.show();
     return a.exec();

@@ -10,6 +10,7 @@
 #include "Home.h"
 #include "About.h"
 #include "ui_Home.h"
+#include "version.h"
 home::home(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::home)
@@ -17,6 +18,12 @@ home::home(QWidget *parent)
     ui->setupUi(this);//启动UI
     action_homeinfo_refresh();
     setFixedSize(this->width(),this->height()); //固定大小
+    QString systemname = QSysInfo::kernelType();// 获取内核信息
+    QString distro = QSysInfo::prettyProductName();// 获取发行版名称
+    QString systemver = QSysInfo::productVersion();// 获取系统版本
+    ui -> Version ->setText(AK_VERSION);
+    ui -> test_waring -> setText("Alpha 版本 || 请勿用于生产环境 || 请及时汇报BUG || 请勿滥用接口");
+    qInfo()<<"系统环境："<<systemname<<"；发行版："<<distro<<"；系统版本："<<systemver<<"；软件版本"<<AK_VERSION;
     // 菜单栏：帮助
     connect(ui -> about, &QAction::triggered, this, &home::action_help_about_triggered); // UI：关于
     connect(ui -> wiki, &QAction::triggered, this, &home::action_help_wiki_triggered); // UI：WIKI

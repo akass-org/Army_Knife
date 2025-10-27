@@ -44,6 +44,9 @@
    <property name="text">
     <string>基于Qt 6构建</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+   </property>
   </widget>
   <widget class="QLabel" name="inspried">
    <property name="geometry">

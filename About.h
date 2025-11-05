@@ -12,6 +12,8 @@
 #include <QWidget>
 #include <QDialog>
 #include <QSysInfo>
+#include <QMessageBox>
+#include <QAction>
 namespace Ui {
 class about;
 }

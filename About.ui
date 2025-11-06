@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>228</height>
+    <height>302</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,8 +35,8 @@
   <widget class="QLabel" name="qtver">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>170</y>
+     <x>300</x>
+     <y>250</y>
      <width>81</width>
      <height>20</height>
     </rect>
@@ -64,8 +64,8 @@
   <widget class="QLabel" name="oss_license">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>190</y>
+     <x>210</x>
+     <y>270</y>
      <width>171</width>
      <height>20</height>
     </rect>
@@ -80,11 +80,20 @@
   <widget class="QLabel" name="qticon">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>140</y>
-     <width>100</width>
-     <height>71</height>
+     <x>330</x>
+     <y>210</y>
+     <width>50</width>
+     <height>35</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
    </property>
    <property name="text">
     <string/>
@@ -92,31 +101,34 @@
    <property name="pixmap">
     <pixmap resource="Resource.qrc">:/Resource/qt.png</pixmap>
    </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QLabel" name="env_table">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>80</y>
+     <y>150</y>
      <width>91</width>
      <height>19</height>
     </rect>
    </property>
    <property name="text">
-    <string>当前软件环境：</string>
+    <string>当前环境：</string>
    </property>
   </widget>
   <widget class="QLabel" name="env">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>80</y>
-     <width>271</width>
+     <x>20</x>
+     <y>170</y>
+     <width>361</width>
      <height>19</height>
     </rect>
    </property>
    <property name="text">
-    <string>当前软件环境</string>
+    <string>SYSNAME</string>
    </property>
   </widget>
   <widget class="QLabel" name="softver">
@@ -135,14 +147,53 @@
   <widget class="QLabel" name="softver_info">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>60</y>
-     <width>291</width>
+     <x>20</x>
+     <y>80</y>
+     <width>361</width>
      <height>19</height>
     </rect>
    </property>
    <property name="text">
-    <string>软件版本</string>
+    <string>VERSION</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="toolversion">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>120</y>
+     <width>361</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TOOLVERSION</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="toolver">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>100</y>
+     <width>81</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>工具箱版本：</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="aboutqt">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>260</y>
+     <width>86</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>关于 Qt</string>
    </property>
   </widget>
  </widget>

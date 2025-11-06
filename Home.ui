@@ -436,7 +436,6 @@
     <addaction name="updatelog"/>
     <addaction name="git"/>
     <addaction name="issue"/>
-    <addaction name="aboutqt"/>
    </widget>
    <addaction name="tools"/>
    <addaction name="helpcenter"/>

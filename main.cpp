@@ -8,6 +8,7 @@
 
 
 QString AK_VERSION = "0.4.rana.alpha.251027";
+QString AKT_VERSION = "AKTools.astra.prototype";
 
 void customMessageHandler(QtMsgType type, const QMessageLogContext &, const QString &msg)
 {

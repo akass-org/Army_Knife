@@ -11,6 +11,7 @@
 ## Qt版本截图
 
 ![Home](git_img/sc.png)<br>
+
 <center>主页</center>
 
 # 重构Timeline

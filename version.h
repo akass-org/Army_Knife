@@ -8,4 +8,5 @@ public:
 
 };
 extern QString AK_VERSION;
+extern QString AKT_VERSION;
 #endif // VERSION_H

@@ -26,17 +26,18 @@ home::home(QWidget *parent)
     ui -> Version ->setText(AK_VERSION);
     ui -> test_waring -> setText("Alpha 版本 || 请勿用于生产环境 || 请及时汇报BUG || 请勿滥用接口");
 
-    qInfo()<<"系统环境："<<systemname<<"；发行版："<<distro<<"；系统版本："<<systemver<<"；软件版本："<<AK_VERSION<<"；工具箱版本："<<AKT_VERSION;
+    qInfo()<<"系统环境："<<systemname<<"；系统："<<distro<<"；系统版本："<<systemver;
+    qInfo()<<"软件版本："<<AK_VERSION<<"；工具箱版本："<<AKT_VERSION;
 
     // 菜单栏：帮助
-    connect(ui -> about, &QAction::triggered, this, &home::action_help_about_triggered); // UI：关于
-    connect(ui -> wiki, &QAction::triggered, this, &home::action_help_wiki_triggered); // UI：WIKI
-    connect(ui -> CNB, &QAction::triggered, this, &home::action_help_cnb_triggered);// UI：CNB GIT
-    connect(ui -> Github, &QAction::triggered, this, &home::action_help_github_triggered);// UI：Github
-    connect(ui -> updatelog, &QAction::triggered, this, &home::action_help_updatelog_triggered);// UI：更新日志
-    connect(ui -> issuecnb, &QAction::triggered, this, &home::action_help_issuecnb_triggered);// UI：IssueCNB
-    connect(ui -> issuegithub, &QAction::triggered, this, &home::action_help_issuegithub_triggered);// UI：IssueGH
-
+    connect(ui -> about, &QAction::triggered, this, &home::action_help_about_triggered); // 菜单栏-帮助：关于
+    connect(ui -> wiki, &QAction::triggered, this, &home::action_help_wiki_triggered); // 菜单栏-帮助：WIKI
+    connect(ui -> CNB, &QAction::triggered, this, &home::action_help_cnb_triggered);// 菜单栏-帮助：CNB GIT
+    connect(ui -> Github, &QAction::triggered, this, &home::action_help_github_triggered);// 菜单栏-帮助：Github
+    connect(ui -> updatelog, &QAction::triggered, this, &home::action_help_updatelog_triggered);// 菜单栏-帮助：更新日志
+    connect(ui -> issuecnb, &QAction::triggered, this, &home::action_help_issuecnb_triggered);// 菜单栏-帮助：IssueCNB
+    connect(ui -> issuegithub, &QAction::triggered, this, &home::action_help_issuegithub_triggered);// 菜单栏-帮助：IssueGH
+    connect(ui -> blog, &QAction::triggered, this, &home::action_help_Blog_triggered);// 菜单栏-帮助：BLOG
     /*主页：主机名*/
     QString localHostname = QHostInfo::localHostName(); // 主机名实现
     QString beforPCname = "主机名：";// setText | hostname 前的信息
@@ -61,6 +62,22 @@ home::~home()
 }
 
 /* 菜单栏业务相关定义 */
+
+/*打开文档页*/
+
+void home::action_help_Blog_triggered(){
+
+    qInfo()<<"已触发action_help_wiki_triggered";
+
+    QUrl wikiurl("https://ne0w0r1d.top");//使用QUrl定义*Wiki URL*
+    QDesktopServices::openUrl(wikiurl);//用Qt桌面服务打开*Wiki URL*
+
+    qDebug() << "Wiki 信号已发出，请检查浏览器";
+
+    /*以下菜单栏相关代码同理 QUrl & Desktup Services*/
+
+}
+
 /*打开文档页*/
 void home::action_help_wiki_triggered(){
 

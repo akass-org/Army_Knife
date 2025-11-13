@@ -61,7 +61,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Loading……</string>
+     <string>HOSTNAME</string>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget">
@@ -323,7 +323,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Loading……</string>
+     <string>PRIORITY</string>
     </property>
    </widget>
    <widget class="QLabel" name="test_waring">
@@ -341,7 +341,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Loading……</string>
+     <string>TEST_VERSION | WARNING</string>
     </property>
     <property name="textFormat">
      <enum>Qt::TextFormat::PlainText</enum>
@@ -365,7 +365,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Loading……</string>
+     <string>VERSION NAME</string>
     </property>
     <property name="textFormat">
      <enum>Qt::TextFormat::PlainText</enum>
@@ -384,7 +384,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>24</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="tools">

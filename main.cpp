@@ -50,7 +50,7 @@ void customMessageHandler(QtMsgType type, const QMessageLogContext &, const QStr
     // 如果是致命错误，仍然终止程序
     if (type == QtFatalMsg)
         abort();
-    if (logFile.size() > 5 * 1024 * 1024) { // 超过 5 MB
+    if (logFile.size() > 2 * 1024 * 1024) { // 超过 2 MB
         logFile.resize(0); // 清空
     }
 }
@@ -59,7 +59,6 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     qInstallMessageHandler(customMessageHandler);
-    QString Version = "Test";
     home w;
     w.show();
     return a.exec();

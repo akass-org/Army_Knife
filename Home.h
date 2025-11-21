@@ -53,6 +53,7 @@ private slots:
     void action_help_updatelog_triggered();//更新日志信号
     void action_help_issuecnb_triggered();//IssueCNB
     void action_help_issuegithub_triggered();//IssueGithub
+    void action_help_Blog_triggered();//IssueGithub
     /*Home*/
     void action_homeinfo_refresh(); // 刷新按钮
     // void action_homeinfo_settings(); //设置按钮

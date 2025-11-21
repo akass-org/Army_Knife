@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>瑞士军刀</string>
+   <string>Cipher Tools</string>
   </property>
   <widget class="QWidget" name="Home">
    <widget class="QPushButton" name="hidemode">
@@ -21,7 +21,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>340</y>
+      <y>350</y>
       <width>86</width>
       <height>27</height>
      </rect>
@@ -37,7 +37,7 @@
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>340</y>
+      <y>350</y>
       <width>86</width>
       <height>27</height>
      </rect>
@@ -50,7 +50,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>370</y>
+      <y>380</y>
       <width>231</width>
       <height>21</height>
      </rect>
@@ -68,7 +68,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>30</y>
+      <y>60</y>
       <width>351</width>
       <height>58</height>
      </rect>
@@ -82,7 +82,7 @@
         </font>
        </property>
        <property name="text">
-        <string>公网IPv4地址</string>
+        <string>公网 IPv4 地址</string>
        </property>
       </widget>
      </item>
@@ -104,9 +104,9 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>110</y>
+      <y>140</y>
       <width>351</width>
-      <height>58</height>
+      <height>61</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout_3">
@@ -121,7 +121,7 @@
         </font>
        </property>
        <property name="text">
-        <string>公网IPv6地址</string>
+        <string>公网 IPv6 地址</string>
        </property>
       </widget>
      </item>
@@ -146,7 +146,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>190</y>
+      <y>220</y>
       <width>351</width>
       <height>121</height>
      </rect>
@@ -188,7 +188,7 @@
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>30</y>
+      <y>60</y>
       <width>351</width>
       <height>58</height>
      </rect>
@@ -202,7 +202,7 @@
         </font>
        </property>
        <property name="text">
-        <string>本地IPv4地址</string>
+        <string>本地 IPv4 地址</string>
        </property>
       </widget>
      </item>
@@ -224,7 +224,7 @@
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>110</y>
+      <y>140</y>
       <width>351</width>
       <height>61</height>
      </rect>
@@ -238,7 +238,7 @@
         </font>
        </property>
        <property name="text">
-        <string>本地IPv6地址</string>
+        <string>本地 IPv6 地址</string>
        </property>
       </widget>
      </item>
@@ -260,24 +260,12 @@
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>190</y>
+      <y>220</y>
       <width>351</width>
       <height>121</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout_6">
-     <item row="0" column="0">
-      <widget class="QLabel" name="currentMac">
-       <property name="font">
-        <font>
-         <pointsize>16</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>当前网卡MAC地址</string>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="0">
       <widget class="QLabel" name="Mac">
        <property name="font">
@@ -290,6 +278,18 @@
        </property>
       </widget>
      </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="currentMac">
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>当前网卡 MAC 地址</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
    <widget class="QPushButton" name="refresh">
@@ -299,7 +299,7 @@
     <property name="geometry">
      <rect>
       <x>220</x>
-      <y>340</y>
+      <y>350</y>
       <width>86</width>
       <height>27</height>
      </rect>
@@ -312,7 +312,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>390</y>
+      <y>400</y>
       <width>231</width>
       <height>20</height>
      </rect>
@@ -327,9 +327,12 @@
     </property>
    </widget>
    <widget class="QLabel" name="test_waring">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>270</x>
       <y>410</y>
       <width>521</width>
       <height>20</height>
@@ -337,7 +340,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <pointsize>6</pointsize>
      </font>
     </property>
     <property name="text">
@@ -345,6 +348,9 @@
     </property>
     <property name="textFormat">
      <enum>Qt::TextFormat::PlainText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
     </property>
     <property name="wordWrap">
      <bool>false</bool>
@@ -354,7 +360,7 @@
     <property name="geometry">
      <rect>
       <x>560</x>
-      <y>410</y>
+      <y>390</y>
       <width>231</width>
       <height>20</height>
      </rect>
@@ -377,6 +383,25 @@
      <bool>false</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="softname">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>291</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>欢迎使用 Cipher Tools </string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -387,29 +412,6 @@
      <height>23</height>
     </rect>
    </property>
-   <widget class="QMenu" name="tools">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="tearOffEnabled">
-     <bool>true</bool>
-    </property>
-    <property name="title">
-     <string>工具</string>
-    </property>
-    <widget class="QMenu" name="Ping">
-     <property name="title">
-      <string>NowPing 延迟检测</string>
-     </property>
-     <addaction name="PingCS"/>
-     <addaction name="PingVAL"/>
-     <addaction name="PINGGNT"/>
-    </widget>
-    <addaction name="WOL"/>
-    <addaction name="track"/>
-    <addaction name="NAT"/>
-    <addaction name="Ping"/>
-   </widget>
    <widget class="QMenu" name="helpcenter">
     <property name="title">
      <string>帮助中心</string>
@@ -436,6 +438,30 @@
     <addaction name="updatelog"/>
     <addaction name="git"/>
     <addaction name="issue"/>
+   </widget>
+   <widget class="QMenu" name="tools">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="tearOffEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>工具</string>
+    </property>
+    <widget class="QMenu" name="Ping">
+     <property name="title">
+      <string>NowPing 延迟检测</string>
+     </property>
+     <addaction name="PingCS"/>
+     <addaction name="PingVAL"/>
+     <addaction name="PINGGNT"/>
+    </widget>
+    <addaction name="actionMultiOutput"/>
+    <addaction name="WOL"/>
+    <addaction name="track"/>
+    <addaction name="NAT"/>
+    <addaction name="Ping"/>
    </widget>
    <addaction name="tools"/>
    <addaction name="helpcenter"/>
@@ -527,6 +553,11 @@
    </property>
    <property name="text">
     <string>设备信息</string>
+   </property>
+  </action>
+  <action name="actionMultiOutput">
+   <property name="text">
+    <string>MultiOutput 多出口</string>
    </property>
   </action>
  </widget>

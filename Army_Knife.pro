@@ -2,7 +2,7 @@ QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++17
+CONFIG += c++17 #static
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -12,13 +12,14 @@ SOURCES += \
     About.cpp \
     Home.cpp \
     main.cpp \
+    settings.cpp \
     tools/deviceinfo.cpp \
-    tools/wakenow.cpp \
-    version.cpp
+    tools/wakenow.cpp
 
 HEADERS += \
     About.h \
     Home.h \
+    settings.h \
     tools/deviceinfo.h \
     tools/wakenow.h \
     version.h
@@ -26,6 +27,7 @@ HEADERS += \
 FORMS += \
     About.ui \
     Home.ui \
+    settings.ui \
     tools/deviceinfo.ui \
     tools/wakenow.ui
 

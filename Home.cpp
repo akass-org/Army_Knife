@@ -1,9 +1,9 @@
 /*
-******** Yumeyo's ARMY KNIFE（NetInfoChecker Qt Edition） ********
-******** 2025© Ne0W0r1d
-******** 2024-2025© Yumeyo
-******** LGPL 2.1 License
-******** This file about home ********
+******** Cipher Tools ********
+******** 2025© Ne0W0r1d ********
+******** 2024-2025© Yumeyo ********
+******** LGPL 3 License ********
+******** Home ********
 */
 
 
@@ -122,7 +122,7 @@ void home::action_help_about_triggered(){
 /*打开更新日志*/
 void home::action_help_updatelog_triggered(){
 
-    QUrl updateurl("https://cnb.cool/neoengine_dev/Yumeyo_no_Army_Knife/-/releases");
+    QUrl updateurl("https://cnb.cool/neoengine_dev/Army_Knife/-/releases");
     QDesktopServices::openUrl(updateurl);
     qDebug() << "打开更新日志信号已发出，请检查浏览器";
 
@@ -130,7 +130,7 @@ void home::action_help_updatelog_triggered(){
 /*IssueCNB*/
 void home::action_help_issuecnb_triggered(){
 
-    QUrl issuecnb("https://cnb.cool/neoengine_dev/Yumeyo_no_Army_Knife/-/issues");
+    QUrl issuecnb("https://cnb.cool/neoengine_dev/Army_Knife/-/issues");
     QDesktopServices::openUrl(issuecnb);
     qDebug() << "打开CNB议题 信号已发出，请检查浏览器";
 
@@ -156,11 +156,11 @@ void home::action_homeinfo_refresh(){
     ui -> localv4add -> setText("Loading......"); // 局域网V4: UI初始化
     ui -> localv6add -> setText("Loading......"); // 局域网V6: UI初始化
 
-    home::getlan();
-    home::getwanv4();
-    home::getwanv6();
-    home::getisp();
-    home::getpriority();
+    home::getlan(); // 执行本地获取
+    home::getwanv4(); // 执行公网 V4 获取
+    home::getwanv6(); // 执行公网 V6 获取
+    home::getisp();// 执行 ISP 获取
+    home::getpriority(); // 执行优先级获取
 }
 
 // 远程IP、ISP获取
@@ -189,6 +189,7 @@ void home::getwanv4() // V4
 }
 /*以下代码同理*/
 
+// 获得 V6 公网 IP
 void home::getwanv6()
 {
     QNetworkAccessManager *v6manager = new QNetworkAccessManager(this);
@@ -212,6 +213,7 @@ void home::getwanv6()
     });
 }
 
+// 获得 ISP
 void home::getisp() {
     QNetworkAccessManager *ispget = new QNetworkAccessManager(this);
     QNetworkRequest request(QUrl("https://cip.cc"));
@@ -236,7 +238,7 @@ void home::getisp() {
             }
         }else{
 
-            qWarning() << "请求失败喵：" <<ispreply->errorString();
+            qCritical() << "请求失败喵：" <<ispreply->errorString();
             ui -> ispinfo -> setText("请求失败喵，请检查日志🐱");
         }
 
@@ -276,7 +278,7 @@ void home::getpriority(){ // 连接优先级
     });
 }
 
-// 本地网路地址获取相关（计划增加多网卡支持）
+// 本地获取（计划增加多网卡支持）
 void home::getlan(){
     QString lanv4_add, lanv6_add, macadd;
     const QList<QNetworkInterface> interfaces = QNetworkInterface::allInterfaces(); // 获取所有网卡

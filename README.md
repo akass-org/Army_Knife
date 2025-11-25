@@ -28,11 +28,11 @@
 
 - [X] UI基础布局(Anno)<br>
 - [X] 日志实现(Rana-Re)<br>
-- [ ] 私隐模式实现(Rana-Re)<br>
-- [ ] 设备信息实现（Rana-Re）<br>
-- [ ] WhatsNAT网络转换层级检测、PingCS、PingGNT功能实现(Beta)<br>
-- [ ] TrackNow路由检测、PingVAL功能实现、测速、WOL功能实现(Beta)<br>
-- [ ] 主页查询多API实现（Stable）<br> 
+- [ ] 多网卡信息输出实现(Rana-Re)<br>
+- [ ] 多 API 选择实现(Rana-Re)<br>
+- [ ] 路由跳点检测、WOL功能实现(Beta)<br>
+- [ ] NAT 检测、多出口功能实现(Beta)<br>
+- [ ] 设备信息实现(Beta)<br>
 - [ ] 全新UI（NXT-Stable）<br>
 
 ## Army Knife（Qt）主要分支

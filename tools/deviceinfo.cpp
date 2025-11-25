@@ -1,3 +1,11 @@
+/*
+******** Cipher Tools ********
+******** 2025© Ne0W0r1d ********
+******** 2024-2025© Yumeyo ********
+******** LGPL 3 License ********
+******** Tools/Device ********
+*/
+
 #include "deviceinfo.h"
 #include "ui_deviceinfo.h"
 

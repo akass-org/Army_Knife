@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>151</width>
-    <height>197</height>
+    <height>242</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,6 +35,16 @@
      <height>26</height>
     </rect>
    </property>
+   <item>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>2</string>
+    </property>
+   </item>
   </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
@@ -58,6 +68,16 @@
      <height>26</height>
     </rect>
    </property>
+   <item>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>2</string>
+    </property>
+   </item>
   </widget>
   <widget class="QLabel" name="softname">
    <property name="geometry">
@@ -76,6 +96,25 @@
    </property>
    <property name="text">
     <string>设置</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>200</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>是否生成日志</string>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>

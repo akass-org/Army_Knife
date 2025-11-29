@@ -16,7 +16,7 @@ home::home(QWidget *parent)
     , ui(new Ui::home)
 {
     ui->setupUi(this);//启动UI
-    action_homeinfo_refresh();
+    HomeInfo_Refresh();
     setFixedSize(this->width(),this->height()); //固定大小
 
     QString systemname = QSysInfo::kernelType();// 获取内核信息
@@ -30,14 +30,27 @@ home::home(QWidget *parent)
     qInfo()<<"软件版本："<<AK_VERSION<<"；工具箱版本："<<AKT_VERSION;
 
     // 菜单栏：帮助
-    connect(ui -> about, &QAction::triggered, this, &home::action_help_about_triggered); // 菜单栏-帮助：关于
-    connect(ui -> wiki, &QAction::triggered, this, &home::action_help_wiki_triggered); // 菜单栏-帮助：WIKI
-    connect(ui -> CNB, &QAction::triggered, this, &home::action_help_cnb_triggered);// 菜单栏-帮助：CNB GIT
-    connect(ui -> Github, &QAction::triggered, this, &home::action_help_github_triggered);// 菜单栏-帮助：Github
-    connect(ui -> updatelog, &QAction::triggered, this, &home::action_help_updatelog_triggered);// 菜单栏-帮助：更新日志
-    connect(ui -> issuecnb, &QAction::triggered, this, &home::action_help_issuecnb_triggered);// 菜单栏-帮助：IssueCNB
-    connect(ui -> issuegithub, &QAction::triggered, this, &home::action_help_issuegithub_triggered);// 菜单栏-帮助：IssueGH
-    connect(ui -> blog, &QAction::triggered, this, &home::action_help_Blog_triggered);// 菜单栏-帮助：BLOG
+    connect(ui -> about, &QAction::triggered, this, &home::help_About_trigger); // 菜单栏 - 帮助：关于
+    connect(ui -> wiki, &QAction::triggered, this, &home::help_Wiki_trigger); // 菜单栏 - 帮助：WIKI
+    connect(ui -> blog, &QAction::triggered, this, &home::help_Blog_trigger);// 菜单栏-帮助：BLOG
+
+    connect(ui -> repoCNB, &QAction::triggered, this, &home::help_repoCNB_trigger);// 菜单栏 - 帮助 - 查看源码：CNB
+    connect(ui -> repoGithub, &QAction::triggered, this, &home::help_repoGithub_trigger);// 菜单栏 - 帮助 - 查看源码：Github
+    connect(ui -> repoCodeberg, &QAction::triggered, this, &home::help_logCodeberg_trigger);// 菜单栏 - 帮助 - 查看源码：Codeberg
+    connect(ui -> repoGitee, &QAction::triggered, this, &home::help_logGitee_trigger);// 菜单栏 - 帮助 - 查看源码：Gitee
+
+    connect(ui -> logCNB, &QAction::triggered, this, &home::help_logCNB_trigger);// 菜单栏 - 帮助 - 更新日志：CNB
+    connect(ui -> logGithub, &QAction::triggered, this, &home::help_logGithub_trigger);// 菜单栏 - 帮助 - 更新日志：Github
+    connect(ui -> logGitee, &QAction::triggered, this, &home::help_logGitee_trigger);// 菜单栏 - 帮助 - 更新日志：CNB
+    connect(ui -> logCodeberg, &QAction::triggered, this, &home::help_logCodeberg_trigger);// 菜单栏 - 帮助 - 更新日志：Codeberg
+
+    connect(ui -> issueCNB, &QAction::triggered, this, &home::help_issueCNB_trigger);// 菜单栏 - 帮助 - 问题反馈：CNB
+    connect(ui -> issueGithub, &QAction::triggered, this, &home::help_issueGithub_trigger);// 菜单栏 - 帮助 - 问题反馈：Github
+    connect(ui -> issueCodeberg, &QAction::triggered, this, &home::help_issueCodeberg_trigger);// 菜单栏 - 帮助 - 问题反馈：Codeberg
+    connect(ui -> issueGitee, &QAction::triggered, this, &home::help_issueGitee_trigger);// 菜单栏 - 帮助 - 问题反馈：Gitee
+
+    /* 菜单-工具 */
+    connect(ui -> MOWeb, &QAction::triggered, this, &home::Tools_MOWeb_Trigger); // 工具：网页版多出口
 
     /*主页：主机名*/
     QString localHostname = QHostInfo::localHostName(); // 主机名实现
@@ -49,7 +62,7 @@ home::home(QWidget *parent)
     ui->hostname->setText(beforPCname + localHostname);// 输出主机名：Hostname
 
     /*主页：按钮*/
-    connect(ui -> refresh, &QPushButton::clicked, this, &home::action_homeinfo_refresh); // 刷新主页信息
+    connect(ui -> refresh, &QPushButton::clicked, this, &home::HomeInfo_Refresh); // 刷新主页信息
 
 }
 
@@ -60,49 +73,61 @@ home::~home()
 
 /* 菜单栏业务相关定义 */
 
+/* 工具实现 */
+
+/* 多出口在线版 */
+void home::Tools_MOWeb_Trigger(){
+    qInfo()<<"muti_out_website_trigger";
+
+    QUrl MowebUrl("https://raw.githack.com/yumeyo23/netinfochecker/main/checker-web.html");
+    QDesktopServices::openUrl(MowebUrl);
+
+    qDebug() << "桌面服务信号已发出，请检查浏览器 MutiOutWeb";
+}
+
 /*打开文档页*/
 
-void home::action_help_Blog_triggered(){
+void home::help_Blog_trigger(){
 
-    qInfo()<<"已触发action_help_wiki_triggered";
+    qInfo()<<"已触发help_Wiki_trigger";
 
-    QUrl wikiurl("https://ne0w0r1d.top");//使用QUrl定义*Wiki URL*
-    QDesktopServices::openUrl(wikiurl);//用Qt桌面服务打开*Wiki URL*
+    QUrl BlogUrl("https://ne0w0r1d.top");//使用QUrl定义*Wiki URL*
+    QDesktopServices::openUrl(BlogUrl);//用Qt桌面服务打开*Wiki URL*
 
-    qDebug() << "Wiki 信号已发出，请检查浏览器";
+    qDebug() << "桌面服务信号已发出，请检查浏览器 Blog";
 
     /*以下菜单栏相关代码同理 QUrl & Desktup Services*/
 
 }
 
-/*打开文档页*/
-void home::action_help_wiki_triggered(){
+/* 打开文档页 */
+void home::help_Wiki_trigger(){
 
-    qInfo()<<"已触发action_help_wiki_triggered";
+    qInfo()<<"已触发help_Wiki_trigger";
 
-    QUrl wikiurl("https://armyknife.ne0w0r1d.top");//使用QUrl定义*Wiki URL*
-    QDesktopServices::openUrl(wikiurl);//用Qt桌面服务打开*Wiki URL*
+    QUrl WikiUrl("https://armyknife.ne0w0r1d.top");// 使用QUrl定义*Wiki URL*
+    QDesktopServices::openUrl(WikiUrl);// 用Qt桌面服务打开*Wiki URL*
 
-    qDebug() << "Wiki 信号已发出，请检查浏览器";
+    qDebug() << "桌面服务信号已发出，请检查浏览器 Wiki";
 
     /*以下菜单栏相关代码同理 QUrl & Desktup Services*/
 
 }
 /*打开CNB*/
-void home::action_help_cnb_triggered(){
+void home::help_repoCNB_trigger(){
 
-    qInfo()<<"已触发action_help_cnb_triggered";
+    qInfo()<<"已触发help_repoCNB_trigger";
 
     QUrl cnb_repo("https://cnb.cool/neoengine_dev/Army_Knife");
     QDesktopServices::openUrl(cnb_repo);
 
-    qDebug() << "打开CNB信号已发出，请检查浏览器";
+    qDebug() << "桌面服务信号已发出，请检查浏览器 CNB Repo";
 
 }
 /*打开github*/
-void home::action_help_github_triggered(){
+void home::help_repoGithub_trigger(){
 
-    qInfo()<<"已触发action_help_github_triggered";
+    qInfo()<<"已触发help_repoGithub_trigger";
 
     QUrl wikiurl("https://github.com/akass-org/Army_Knife/");
     QDesktopServices::openUrl(wikiurl);
@@ -111,7 +136,7 @@ void home::action_help_github_triggered(){
 
 }
 /*打开关于窗口*/
-void home::action_help_about_triggered(){
+void home::help_About_trigger(){
 
     about *aboutWidget = new about(this);//打开about组件
     aboutWidget->setAttribute(Qt::WA_DeleteOnClose);//
@@ -120,7 +145,7 @@ void home::action_help_about_triggered(){
 
 }
 /*打开更新日志*/
-void home::action_help_updatelog_triggered(){
+void home::help_logCNB_trigger(){
 
     QUrl updateurl("https://cnb.cool/neoengine_dev/Army_Knife/-/releases");
     QDesktopServices::openUrl(updateurl);
@@ -128,7 +153,7 @@ void home::action_help_updatelog_triggered(){
 
 }
 /*IssueCNB*/
-void home::action_help_issuecnb_triggered(){
+void home::help_issueCNB_trigger(){
 
     QUrl issuecnb("https://cnb.cool/neoengine_dev/Army_Knife/-/issues");
     QDesktopServices::openUrl(issuecnb);
@@ -136,7 +161,7 @@ void home::action_help_issuecnb_triggered(){
 
 }
 /*IssueGithub*/
-void home::action_help_issuegithub_triggered(){
+void home::help_issueGithub_trigger(){
 
     QUrl issuegithub("https://github.com/akass-org/Army_Knife/issues");
     QDesktopServices::openUrl(issuegithub);
@@ -145,9 +170,8 @@ void home::action_help_issuegithub_triggered(){
 }
 
 
-
 /* 刷新按键、首次获取 */
-void home::action_homeinfo_refresh(){
+void home::HomeInfo_Refresh(){
     qInfo()<<"信息获取/刷新信号已收到，初始化UI并获取信息中";
 
     ui -> v4add -> setText("Loading......"); // v4地址ui: 初始化

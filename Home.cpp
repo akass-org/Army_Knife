@@ -36,18 +36,18 @@ home::home(QWidget *parent)
 
     connect(ui -> repoCNB, &QAction::triggered, this, &home::help_repoCNB_trigger);// 菜单栏 - 帮助 - 查看源码：CNB
     connect(ui -> repoGithub, &QAction::triggered, this, &home::help_repoGithub_trigger);// 菜单栏 - 帮助 - 查看源码：Github
-    connect(ui -> repoCodeberg, &QAction::triggered, this, &home::help_logCodeberg_trigger);// 菜单栏 - 帮助 - 查看源码：Codeberg
-    connect(ui -> repoGitee, &QAction::triggered, this, &home::help_logGitee_trigger);// 菜单栏 - 帮助 - 查看源码：Gitee
+    //connect(ui -> repoCodeberg, &QAction::triggered, this, &home::help_logCodeberg_trigger);// 菜单栏 - 帮助 - 查看源码：Codeberg
+    //connect(ui -> repoGitee, &QAction::triggered, this, &home::help_logGitee_trigger);// 菜单栏 - 帮助 - 查看源码：Gitee
 
     connect(ui -> logCNB, &QAction::triggered, this, &home::help_logCNB_trigger);// 菜单栏 - 帮助 - 更新日志：CNB
-    connect(ui -> logGithub, &QAction::triggered, this, &home::help_logGithub_trigger);// 菜单栏 - 帮助 - 更新日志：Github
-    connect(ui -> logGitee, &QAction::triggered, this, &home::help_logGitee_trigger);// 菜单栏 - 帮助 - 更新日志：CNB
-    connect(ui -> logCodeberg, &QAction::triggered, this, &home::help_logCodeberg_trigger);// 菜单栏 - 帮助 - 更新日志：Codeberg
+    //connect(ui -> logGithub, &QAction::triggered, this, &home::help_logGithub_trigger);// 菜单栏 - 帮助 - 更新日志：Github
+    //connect(ui -> logGitee, &QAction::triggered, this, &home::help_logGitee_trigger);// 菜单栏 - 帮助 - 更新日志：CNB
+    //connect(ui -> logCodeberg, &QAction::triggered, this, &home::help_logCodeberg_trigger);// 菜单栏 - 帮助 - 更新日志：Codeberg
 
     connect(ui -> issueCNB, &QAction::triggered, this, &home::help_issueCNB_trigger);// 菜单栏 - 帮助 - 问题反馈：CNB
     connect(ui -> issueGithub, &QAction::triggered, this, &home::help_issueGithub_trigger);// 菜单栏 - 帮助 - 问题反馈：Github
-    connect(ui -> issueCodeberg, &QAction::triggered, this, &home::help_issueCodeberg_trigger);// 菜单栏 - 帮助 - 问题反馈：Codeberg
-    connect(ui -> issueGitee, &QAction::triggered, this, &home::help_issueGitee_trigger);// 菜单栏 - 帮助 - 问题反馈：Gitee
+    //connect(ui -> issueCodeberg, &QAction::triggered, this, &home::help_issueCodeberg_trigger);// 菜单栏 - 帮助 - 问题反馈：Codeberg
+    //connect(ui -> issueGitee, &QAction::triggered, this, &home::help_issueGitee_trigger);// 菜单栏 - 帮助 - 问题反馈：Gitee
 
     /* 菜单-工具 */
     connect(ui -> MOWeb, &QAction::triggered, this, &home::Tools_MOWeb_Trigger); // 工具：网页版多出口

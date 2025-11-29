@@ -400,26 +400,39 @@
     <property name="title">
      <string>帮助中心</string>
     </property>
-    <widget class="QMenu" name="git">
+    <widget class="QMenu" name="repos">
      <property name="title">
       <string>查看源码</string>
      </property>
-     <addaction name="CNB"/>
-     <addaction name="Github"/>
+     <addaction name="repoCNB"/>
+     <addaction name="repoGithub"/>
+     <addaction name="repoGitee"/>
+     <addaction name="repoCodeberg"/>
     </widget>
     <widget class="QMenu" name="issue">
      <property name="title">
       <string>问题反馈</string>
      </property>
-     <addaction name="issuecnb"/>
-     <addaction name="issuegithub"/>
+     <addaction name="issueCNB"/>
+     <addaction name="issueGithub"/>
+     <addaction name="issueCodeberg"/>
+     <addaction name="issueGitee"/>
+    </widget>
+    <widget class="QMenu" name="log">
+     <property name="title">
+      <string>更新日志</string>
+     </property>
+     <addaction name="logGithub"/>
+     <addaction name="logGitee"/>
+     <addaction name="logCNB"/>
+     <addaction name="logCodeberg"/>
     </widget>
     <addaction name="about"/>
     <addaction name="wiki"/>
     <addaction name="separator"/>
     <addaction name="blog"/>
-    <addaction name="updatelog"/>
-    <addaction name="git"/>
+    <addaction name="repos"/>
+    <addaction name="log"/>
     <addaction name="issue"/>
    </widget>
    <widget class="QMenu" name="tools">
@@ -433,15 +446,18 @@
      <string>工具</string>
     </property>
     <widget class="QMenu" name="Ping">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="title">
       <string>延迟检测</string>
      </property>
      <addaction name="PingCS"/>
      <addaction name="PINGGNT"/>
     </widget>
-    <addaction name="action_2"/>
-    <addaction name="actionMultiOutput"/>
-    <addaction name="action_3"/>
+    <addaction name="MOWeb"/>
+    <addaction name="deviceinfo"/>
+    <addaction name="MOQt"/>
     <addaction name="WOL"/>
     <addaction name="track"/>
     <addaction name="NAT"/>
@@ -452,18 +468,24 @@
   </widget>
   <action name="WOL">
    <property name="enabled">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="text">
     <string>局域网唤醒</string>
    </property>
   </action>
   <action name="track">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>路由检测</string>
    </property>
   </action>
   <action name="NAT">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>NAT 检测</string>
    </property>
@@ -473,17 +495,12 @@
     <string>关于</string>
    </property>
   </action>
-  <action name="updatelog">
-   <property name="text">
-    <string>更新日志</string>
-   </property>
-  </action>
   <action name="wiki">
    <property name="enabled">
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Wiki</string>
+    <string>Wiki（在建）</string>
    </property>
   </action>
   <action name="PingCS">
@@ -501,22 +518,22 @@
     <string>PingVAL《无畏契约》国服延迟检测</string>
    </property>
   </action>
-  <action name="CNB">
+  <action name="repoCNB">
    <property name="text">
     <string>CNB</string>
    </property>
   </action>
-  <action name="Github">
+  <action name="repoGithub">
    <property name="text">
     <string>Github</string>
    </property>
   </action>
-  <action name="issuecnb">
+  <action name="issueCNB">
    <property name="text">
     <string>CNB</string>
    </property>
   </action>
-  <action name="issuegithub">
+  <action name="issueGithub">
    <property name="text">
     <string>Github</string>
    </property>
@@ -539,19 +556,65 @@
     <string>设备信息</string>
    </property>
   </action>
-  <action name="actionMultiOutput">
+  <action name="MOWeb">
    <property name="text">
     <string>多出口（基于 Yumeyo 网络综合查询器多出口 Web 版）</string>
    </property>
   </action>
-  <action name="action_2">
+  <action name="deviceinfo">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>设备信息</string>
    </property>
   </action>
-  <action name="action_3">
+  <action name="MOQt">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>多出口（非浏览器版本）</string>
+   </property>
+  </action>
+  <action name="logGithub">
+   <property name="text">
+    <string>GitHub</string>
+   </property>
+  </action>
+  <action name="logGitee">
+   <property name="text">
+    <string>Gitee</string>
+   </property>
+  </action>
+  <action name="logCNB">
+   <property name="text">
+    <string>CNB</string>
+   </property>
+  </action>
+  <action name="repoGitee">
+   <property name="text">
+    <string>Gitee</string>
+   </property>
+  </action>
+  <action name="logCodeberg">
+   <property name="text">
+    <string>Codeberg</string>
+   </property>
+  </action>
+  <action name="issueCodeberg">
+   <property name="text">
+    <string>Codeberg</string>
+   </property>
+  </action>
+  <action name="repoCodeberg">
+   <property name="text">
+    <string>Codeberg</string>
+   </property>
+  </action>
+  <action name="issueGitee">
+   <property name="text">
+    <string>Gitee</string>
    </property>
   </action>
  </widget>

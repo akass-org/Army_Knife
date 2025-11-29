@@ -45,21 +45,38 @@ public:
     void getlan(); // 获取LAN相关
     void getpriority();// 查询IP优先级
 private slots:
-    /*Help*/
-    void action_help_wiki_triggered();//wiki信号
-    void action_help_cnb_triggered();//cnb信号
-    void action_help_about_triggered();//关于信号
-    void action_help_github_triggered();//github信号
-    void action_help_updatelog_triggered();//更新日志信号
-    void action_help_issuecnb_triggered();//IssueCNB
-    void action_help_issuegithub_triggered();//IssueGithub
-    void action_help_Blog_triggered();//IssueGithub
-    /*Home*/
-    void action_homeinfo_refresh(); // 刷新按钮
-    // void action_homeinfo_settings(); //设置按钮
-    // void action_homeinfo_recordtofile(); // 记录当前IP地址按钮
-    // void action_homeinfo_privacymode(); // 隐私模式按钮
-    // void action_homeinfo_checkrecorded(); //查询已记录按钮
+/* Help */
+    /* 帮助 */
+    void help_Blog_trigger();// 博客信号槽
+    void help_Wiki_trigger();// Wiki 信号槽
+    void help_About_trigger();// 关于信号槽
+
+    /* 仓库 */
+    void help_repoGithub_trigger();// Github 仓库信号槽
+    void help_repoCNB_trigger();// CNB 仓库信号槽
+    void help_repoCodeberg_trigger();// Codeberg 仓库信号槽
+    void help_repoGitee_trigger();// Gitee 仓库信号槽
+
+    /* 更新日志 */
+    void help_logCNB_trigger();// CNB 更新日志信号槽
+    void help_logGithub_trigger();// Github 更新日志信号槽
+    void help_logCodeberg_trigger();// Codeberg 更新日志信号槽
+    void help_logGitee_trigger();// Gitee 更新日志信号槽
+
+    /* 议题 */
+    void help_issueCNB_trigger();// IssueCNB 信号槽
+    void help_issueGithub_trigger();// IssueGithub 信号槽
+    void help_issueGitee_trigger();// IssueGitee 信号槽
+    void help_issueCodeberg_trigger();// IssueCodeberg 信号槽
+
+/* 主页 */
+    void HomeInfo_Refresh(); // 刷新按钮信号槽
+    // void HomeInfo_Settings(); // 设置按钮信号槽
+    // void HomeInfo_RecordToFile(); // 记录当前IP地址按钮
+    // void HomeInfo_CheckRecorded(); //查询已记录按钮
+    /* Tools */
+    void Tools_MOWeb_Trigger(); // 在线版多出口信号槽
+    //void Tools_MOQt_Trigger();
 private:
     Ui::home *ui;
     QNetworkAccessManager *sessionNet;

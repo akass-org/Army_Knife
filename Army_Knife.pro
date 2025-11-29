@@ -14,6 +14,7 @@ SOURCES += \
     main.cpp \
     settings.cpp \
     tools/deviceinfo.cpp \
+    tools/multiout.cpp \
     tools/wakenow.cpp
 
 HEADERS += \
@@ -21,6 +22,7 @@ HEADERS += \
     Home.h \
     settings.h \
     tools/deviceinfo.h \
+    tools/multiout.h \
     tools/wakenow.h \
     version.h
 
@@ -29,6 +31,7 @@ FORMS += \
     Home.ui \
     settings.ui \
     tools/deviceinfo.ui \
+    tools/multiout.ui \
     tools/wakenow.ui
 
 # Default rules for deployment.

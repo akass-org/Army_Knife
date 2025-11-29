@@ -54,20 +54,20 @@ private slots:
     /* 仓库 */
     void help_repoGithub_trigger();// Github 仓库信号槽
     void help_repoCNB_trigger();// CNB 仓库信号槽
-    void help_repoCodeberg_trigger();// Codeberg 仓库信号槽
-    void help_repoGitee_trigger();// Gitee 仓库信号槽
+    //void help_repoCodeberg_trigger();// Codeberg 仓库信号槽
+    //void help_repoGitee_trigger();// Gitee 仓库信号槽
 
     /* 更新日志 */
     void help_logCNB_trigger();// CNB 更新日志信号槽
-    void help_logGithub_trigger();// Github 更新日志信号槽
-    void help_logCodeberg_trigger();// Codeberg 更新日志信号槽
-    void help_logGitee_trigger();// Gitee 更新日志信号槽
+    //void help_logGithub_trigger();// Github 更新日志信号槽
+    //void help_logCodeberg_trigger();// Codeberg 更新日志信号槽
+    //void help_logGitee_trigger();// Gitee 更新日志信号槽
 
     /* 议题 */
     void help_issueCNB_trigger();// IssueCNB 信号槽
     void help_issueGithub_trigger();// IssueGithub 信号槽
-    void help_issueGitee_trigger();// IssueGitee 信号槽
-    void help_issueCodeberg_trigger();// IssueCodeberg 信号槽
+    //void help_issueGitee_trigger();// IssueGitee 信号槽
+    //void help_issueCodeberg_trigger();// IssueCodeberg 信号槽
 
 /* 主页 */
     void HomeInfo_Refresh(); // 刷新按钮信号槽
